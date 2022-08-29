@@ -1,1 +1,16 @@
+@import '~ngx-toastr/toastr';
+
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --primary: #FD3652;
+  --white: #FFFFFF;
+  --black: #000000;
+  --gray: #919191;
+  --yellow: #FFFDF0;
+  --light-red: #FFF2F4;
+  --en-font: 'Montserrat', sans-serif;
+}
+
+body {
+  font-family: var(--en-font);
+}

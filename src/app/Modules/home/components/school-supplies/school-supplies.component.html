@@ -1,0 +1,122 @@
+<section class="container-fluid p-5" id="supplies">
+  <div class="container">
+    <h3 class="head text-center text-capitalize fw-bold mb-2">
+      School Supplies
+    </h3>
+    <div class="desc text-center">
+      Save your money and efforts Order it now simply to get it packed and
+      delivered to home
+    </div>
+    <div class="row content-row mt-4">
+      <div class="col-lg-6 col-md-12 col-sm-12 mb-4 text-part">
+        <div class="discount-part">
+          <div class="icon-wrapper">
+            <img src="assets/imgs/supplies-icon.svg" alt="School Supplies" />
+          </div>
+          <div class="text-wrapper">
+            <p>
+              Send your supplies list now to get it to your doorstep and enjoy
+              7% discount
+            </p>
+          </div>
+        </div>
+        <div class="info-part">
+          <p class="title">For More Information</p>
+          <div class="cards-wrapper">
+            <div class="info-card">
+              <div class="info-icon-wrapper">
+                <i class="fa-brands fa-whatsapp"></i>
+              </div>
+              <p class="text">WhatsApp</p>
+              <p class="data">01067662509</p>
+            </div>
+            <div class="info-card">
+              <div class="info-icon-wrapper">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <p class="text">Message</p>
+              <p class="data">Send us a message</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-12 col-sm-12 mb-4 form-part">
+        <div class="card p-5">
+          <p class="title">Send your school supplies</p>
+          <form [formGroup]="suppliesForm">
+            <div class="form-group mb-3">
+              <input
+                type="text"
+                class="form-control p-2 mb-1"
+                placeholder="Name"
+                formControlName="name"
+              />
+              <small
+                class="text-danger"
+                *ngIf="
+                  suppliesForm.controls['name'].touched &&
+                  !suppliesForm.controls['name'].valid
+                "
+                >Field can't be empty</small
+              >
+            </div>
+            <div class="form-group mb-3">
+              <input
+                type="tel"
+                class="form-control p-2 mb-1"
+                placeholder="Mobile Number"
+                formControlName="phone"
+              />
+              <small
+                class="text-danger"
+                *ngIf="
+                  suppliesForm.controls['phone'].touched &&
+                  !suppliesForm.controls['phone'].valid
+                "
+                >Field can't be empty</small
+              >
+            </div>
+            <div class="form-group mb-3">
+              <input
+                type="email"
+                class="form-control p-2 mb-1"
+                placeholder="Email"
+                formControlName="email"
+              />
+              <small
+                class="text-danger"
+                *ngIf="
+                  suppliesForm.controls['email'].touched &&
+                  !suppliesForm.controls['email'].valid
+                "
+                >Field can't be empty</small
+              >
+            </div>
+            <ng-container>
+              <ngx-dropzone
+                (change)="onSelect($event)"
+                accept="text/csv,text/tsv,.csv,.tsv,.xlsx, image/jpeg,image/jpg,image/png,image/gif,.pdf,.txt,.docx"
+                [multiple]="false"
+              >
+                <ngx-dropzone-label>
+                  <i class="fe fe-upload-cloud" aria-hidden="true"></i>
+                  <h6>Attach List</h6>
+                </ngx-dropzone-label>
+              </ngx-dropzone>
+              <div class="file-preview" *ngIf="files?.length">
+                <div class="file-wrapper">
+                  <span class="file-name">{{ files[0].name }}</span>
+                  <span class="remove" (click)="onRemove()">&times;</span>
+                </div>
+              </div>
+            </ng-container>
+            <button class="btn d-block mt-4" (click)="onSubmit()" *ngIf="!loading" [disabled]="suppliesForm.touched && !suppliesForm.valid">Send Message</button>
+            <div class="loader mt-4" *ngIf="loading">
+              <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

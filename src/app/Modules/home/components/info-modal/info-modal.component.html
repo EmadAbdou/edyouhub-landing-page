@@ -1,0 +1,42 @@
+<div class="modal-body">
+  <div class="head">
+    <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+      <span aria-hidden="true" class="visually-hidden">&times;</span>
+    </button>
+  </div>
+  <div class="row cards mt-4">
+    <div class="card-item text-center col-12 mb-3">
+      <div class="icon-wrapper">
+        <img [src]="cardData?.img" [alt]="cardData?.title" />
+      </div>
+      <h5 class="title mt-3 mb-3">{{ cardData?.title }}</h5>
+      <!-- <p class="desc">{{ cardData?.description }}</p> -->
+      <div class="content" *ngIf="cardData?.id == 1">
+        <p>Fees collection isn’t headache anymore</p>
+        <p>EDYOUHUB allows parents to install the education fees on 12 months with ZERO% interest and pays it Cash to the School</p>
+        <p>School will get the fees in its bank account directly once the parent sign the fund contract.</p>
+        <p>School staff will get 1000 coins on our cash back club to enjoy valuable offers and discounts</p>
+      </div>
+      <div class="content" *ngIf="cardData?.id == 2">
+        <p>We make it easy for parents to pay and make it easy for schools to collect</p>
+        <p>We allow parents to save their time & pay fees by all ways</p>
+        <ul>
+          <li>Credit/Debit cards</li>
+          <li> Cash through all Fawry plus branches</li>
+          <li>Bank Wallets</li>
+          <li>Installments by credit cards</li>
+        </ul>
+        <p>Schools will get its fees directly in its bank account.</p>
+        <p>Can integrate with school's system to get all transactions on spot directly</p>
+        <p>Reports for all confirmed transactions</p>
+      </div>
+      <div class="content" *ngIf="cardData?.id == 3">
+        <p>We help parents to save efforts and money</p>
+        <p>EDYOUHUB will prepare all the required supplies lists by the school</p>
+        <p>Parents can chose their lists simply to get it delivered ready and packed to home</p>
+        <p>Parents will enjoy 10% discount using school's promo code..</p>
+        <p>Then school will get 10% profit</p>
+      </div>
+    </div>
+  </div>
+</div>

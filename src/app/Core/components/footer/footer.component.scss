@@ -1,0 +1,38 @@
+footer {
+  background-color: var(--primary);
+  .icon {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin: auto;
+  }
+  .nav-links {
+    margin-top: 2em;
+    margin-bottom: 2em;
+    .links-wrapper {
+      text-align: center;
+      justify-content: center;
+      a {
+        color: var(--white);
+        text-decoration: none;
+        margin-right: 0.7em;
+        margin-left: 0.7em;
+        padding-bottom: .7em;
+        border-bottom: 1px solid transparent;
+        &:hover {
+          color: var(--yellow);
+          border-bottom: 1px solid var(--yellow);
+          transition: all 0.3s ease-in-out;
+
+        }
+      }
+    }
+
+  }
+  .credits {
+    p {
+      text-align: center;
+      color: var(--white);
+    }
+  }
+}

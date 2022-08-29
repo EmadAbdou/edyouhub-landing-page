@@ -1,0 +1,90 @@
+.container-fluid {
+  background-color: var(--yellow);
+  .head {
+    color: var(--black);
+  }
+  .card {
+    border: none;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.06);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.06);
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.06);
+   }
+  .form-group {
+    input {
+      box-shadow: none;
+      font-size: 14px;
+      outline: none;
+      margin-bottom: 1em;
+    }
+    small {
+      font-size: 12px;
+    }
+  }
+  .form-check {
+    label {
+      font-size: 14px;
+    }
+  }
+  .form-check-input:checked {
+    background-color: var(--primary) !important;
+    border: 0;
+  }
+  .form-check-input:focus,
+  .label::after,
+  label.form-check-label:focus,
+  .form-check-input::after,
+  .form-check-input:not(:disabled):not(.disabled):active:focus {
+    color: black;
+    outline: 0;
+    border: 0;
+    box-shadow: 0 0 0 0.1rem var(--primary) !important;
+  }
+  .btn {
+    background-color: var(--primary);
+    width: 100%;
+    color: var(--white);
+    height: 2.7em;
+    box-shadow: none;
+    outline: none;
+  }
+}
+
+.loader {
+  justify-content: center;
+  text-align: center;
+  .lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 50px;
+    height: 50px;
+  }
+  .lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    margin: 8px;
+    border: 4px solid var(--primary);
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: var(--primary) transparent transparent transparent;
+  }
+  .lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+  }
+  .lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+  }
+  .lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+  }
+  @keyframes lds-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}

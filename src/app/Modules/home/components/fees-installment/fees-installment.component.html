@@ -1,0 +1,160 @@
+<section class="container-fluid p-5" id="fees">
+  <div class="container">
+    <h3 class="head text-center text-capitalize fw-bold mb-4">
+      Fees Installment
+    </h3>
+    <div class="row content-row mt-4">
+      <div class="col-lg-6 col-md-12 col-sm-12 mb-4 form-part">
+        <div class="card p-5">
+          <p class="title">Fill form to contact you</p>
+          <form [formGroup]="feesForm">
+            <div class="form-group mb-3">
+              <input
+                type="text"
+                class="form-control p-2 mb-1"
+                placeholder="Name"
+                formControlName="name"
+              />
+              <small
+                class="text-danger"
+                *ngIf="
+                  feesForm.controls['name'].touched &&
+                  !feesForm.controls['name'].valid
+                "
+                >Field can't be empty</small
+              >
+            </div>
+            <div class="form-group mb-3">
+              <input
+                type="tel"
+                class="form-control p-2 mb-1"
+                placeholder="Mobile Number"
+                formControlName="phone"
+              />
+              <small
+                class="text-danger"
+                *ngIf="
+                  feesForm.controls['phone'].touched &&
+                  !feesForm.controls['phone'].valid
+                "
+                >Field can't be empty</small
+              >
+            </div>
+            <div class="form-group mb-3">
+              <input
+                type="email"
+                class="form-control p-2 mb-1"
+                placeholder="Email"
+                formControlName="email"
+              />
+              <small
+                class="text-danger"
+                *ngIf="
+                  feesForm.controls['email'].touched &&
+                  !feesForm.controls['email'].valid
+                "
+                >Field can't be empty</small
+              >
+            </div>
+            <div class="form-group">
+              <select
+                class="form-select mb-3"
+                formControlName="feesType"
+                aria-label="Fees Type"
+              >
+                <option value="null" selected disabled>Fees Type</option>
+                <option value="BUS">BUS</option>
+                <option value="TUITION">TUITION</option>
+                <option value="BOTH">BOTH</option>
+              </select>
+              <small
+                class="text-danger"
+                *ngIf="
+                  feesForm.controls['feesType'].touched &&
+                  !feesForm.controls['feesType'].valid
+                "
+                >Field can't be empty</small
+              >
+            </div>
+
+            <div class="form-group mb-3">
+              <input
+                type="number"
+                class="form-control p-2 mb-1"
+                placeholder="Number of Students"
+                formControlName="numberOfStudent"
+              />
+              <small
+                class="text-danger"
+                *ngIf="
+                  feesForm.controls['numberOfStudent'].touched &&
+                  !feesForm.controls['numberOfStudent'].valid
+                "
+                >Field can't be empty</small
+              >
+            </div>
+            <div class="form-group mb-3">
+              <input
+                type="number"
+                class="form-control p-2 mb-1"
+                placeholder="Total of Fees Required"
+                formControlName="totalFees"
+              />
+              <small
+                class="text-danger"
+                *ngIf="
+                  feesForm.controls['totalFees'].touched &&
+                  !feesForm.controls['totalFees'].valid
+                "
+                >Field can't be empty</small
+              >
+            </div>
+            <button class="btn d-block mt-4" (click)="onSubmit()" *ngIf="!loading" [disabled]="feesForm.touched && !feesForm.valid">Send Message</button>
+            <div class="loader" *ngIf="loading">
+              <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-12 col-sm-12 mb-4 text-part">
+        <div class="fees-part">
+          <p class="title">Fees Installment</p>
+          <p class="desc">Install it now simply School or University fees</p>
+          <div class="features">
+            <div class="group">
+              <p class="head">12 Months</p>
+              <p class="data">Installments</p>
+            </div>
+            <div class="group">
+              <p class="head">Zero%</p>
+              <p class="data">Interest</p>
+            </div>
+            <div class="group">
+              <p class="head">The Least</p>
+              <p class="data">Processing Fees</p>
+            </div>
+          </div>
+        </div>
+        <div class="info-part">
+          <p class="title">For More Information</p>
+          <div class="cards-wrapper">
+            <div class="info-card">
+              <div class="info-icon-wrapper">
+                <i class="fa-brands fa-whatsapp"></i>
+              </div>
+              <p class="text">WhatsApp</p>
+              <p class="data">01067662509</p>
+            </div>
+            <div class="info-card">
+              <div class="info-icon-wrapper">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <p class="text">Message</p>
+              <p class="data">Send us a message</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

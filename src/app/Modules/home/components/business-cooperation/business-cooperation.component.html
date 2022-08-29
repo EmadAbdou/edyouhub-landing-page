@@ -1,0 +1,18 @@
+<section class="container-fluid p-5" id="business">
+  <div class="container">
+    <h3 class="head text-center text-capitalize fw-bold mb-5">
+      Business Cooperation
+    </h3>
+    <div class="row cards mt-2">
+      <div class="card-item text-center col-lg-4 col-md-6 col-sm-12 mb-2"
+      *ngFor="let card of businessData; let i = index">
+        <div class="icon-wrapper">
+          <img [src]="card?.img" [alt]="card?.title" />
+        </div>
+        <h5 class="title mt-3 mb-3">{{ card?.title }}</h5>
+        <p class="desc">{{ card?.description }}</p>
+        <button class="btn card-btn" (click)="openInfoModal(i)">Read More</button>
+      </div>
+    </div>
+  </div>
+</section>

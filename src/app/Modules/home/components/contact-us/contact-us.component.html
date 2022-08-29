@@ -1,0 +1,129 @@
+<section class="container-fluid p-5">
+  <div class="container">
+    <h3 class="head text-center text-capitalize fw-bold mb-4">Contact Us</h3>
+    <div class="row">
+      <div class="card col-lg-6 col-md-12 col-sm-12 p-5 m-auto">
+        <form [formGroup]="contactForm">
+          <div class="form-group mb-3">
+            <input
+              type="text"
+              class="form-control p-2 mb-1"
+              placeholder="Schools/Universities"
+              formControlName="educationInstitutionName"
+            />
+            <small
+              class="text-danger"
+              *ngIf="
+                contactForm.controls['educationInstitutionName'].touched &&
+                !contactForm.controls['educationInstitutionName'].valid
+              "
+              >Field can't be empty</small
+            >
+          </div>
+          <div class="form-group mb-3">
+            <input
+              type="text"
+              class="form-control p-2 mb-1"
+              placeholder="Contact Person"
+              formControlName="name"
+            />
+            <small
+              class="text-danger"
+              *ngIf="
+                contactForm.controls['name'].touched &&
+                !contactForm.controls['name'].valid
+              "
+              >Field can't be empty</small
+            >
+          </div>
+          <div class="form-group mb-3">
+            <input
+              type="tel"
+              class="form-control p-2 mb-1"
+              placeholder="Mobile Number"
+              formControlName="phone"
+            />
+            <small
+              class="text-danger"
+              *ngIf="
+                contactForm.controls['phone'].touched &&
+                !contactForm.controls['phone'].valid
+              "
+              >Field can't be empty</small
+            >
+          </div>
+          <div class="form-group mb-3">
+            <input
+              type="email"
+              class="form-control p-2 mb-1"
+              placeholder="Email"
+              formControlName="email"
+            />
+            <small
+              class="text-danger"
+              *ngIf="
+                contactForm.controls['email'].touched &&
+                !contactForm.controls['email'].valid
+              "
+              >Field can't be empty</small
+            >
+          </div>
+          <div class="form-group mb-3">
+            <label class="d-block mb-3 text-capitalize fw-bold text-start"
+              >Interested In</label
+            >
+            <div class="form-check form-check-inline mb-3">
+              <input
+                class="form-check-input"
+                name="contactFor"
+                type="radio"
+                id="fees"
+                formControlName="contactFor"
+                value="FEES-INSTALLMENT"
+              />
+              <label class="form-check-label" for="fees"
+                >Fees Installments</label
+              >
+            </div>
+            <div class="form-check form-check-inline mb-3">
+              <input
+                class="form-check-input"
+                name="contactFor"
+                type="radio"
+                id="supplies"
+                value="SUPPLIES"
+                formControlName="contactFor"
+              />
+              <label class="form-check-label" for="supplies"
+                >School Supplies</label
+              >
+            </div>
+            <div class="form-check form-check-inline mb-3">
+              <input
+                class="form-check-input"
+                name="contactFor"
+                type="radio"
+                id="payment"
+                value="FEES-PAYMENT"
+                formControlName="contactFor"
+              />
+              <label class="form-check-label" for="payment">Fees Payment</label>
+            </div>
+            <small
+            class="text-danger"
+            *ngIf="
+              contactForm.controls['contactFor'].touched &&
+              !contactForm.controls['contactFor'].valid
+            "
+            >Field can't be empty</small
+          >
+          <button class="btn d-block mt-4" (click)="onSubmit()" *ngIf="!loading" [disabled]="contactForm.touched && !contactForm.valid">Send Message</button>
+          <div class="loader" *ngIf="loading">
+            <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+          </div>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
