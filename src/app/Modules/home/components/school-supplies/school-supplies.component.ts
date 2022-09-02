@@ -59,6 +59,7 @@ export class SchoolSuppliesComponent implements OnInit, OnDestroy{
           .subscribe((response: any) => {
             if(response.success) {
               this.suppliesForm.reset();
+              this.files = [];
               this.commonService.handleSuccessMessage('Request Sent Successfully')
             }
             this.loading = false;
