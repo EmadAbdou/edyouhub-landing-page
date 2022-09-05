@@ -1,7 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { BsModalService } from 'ngx-bootstrap/modal';
 import { Subscription } from 'rxjs';
 import { CommonService } from 'src/app/Core/services/common.service';
+import { ContactModalComponent } from 'src/app/Shared/components/contact-modal/contact-modal.component';
 import { HomeService } from '../../services/home.service';
 
 @Component({
@@ -19,7 +21,8 @@ export class SchoolSuppliesComponent implements OnInit, OnDestroy{
   constructor(
     private fb: FormBuilder,
     private homeService: HomeService,
-    private commonService: CommonService
+    private commonService: CommonService,
+    private modalService: BsModalService
     ) {}
 
   ngOnInit(): void {
@@ -69,6 +72,10 @@ export class SchoolSuppliesComponent implements OnInit, OnDestroy{
           })
       );
     }
+  }
+
+  onContactUsClicked(): void {
+    this.modalService.show(ContactModalComponent, { class: 'modal-md'});
   }
 
   ngOnDestroy(): void {

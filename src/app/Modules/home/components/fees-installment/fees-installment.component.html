@@ -56,16 +56,15 @@
                 >Field can't be empty</small
               >
             </div>
-            <div class="form-group">
+            <div class="form-group  mb-3">
               <select
-                class="form-select mb-3"
+                class="form-select"
                 formControlName="feesType"
                 aria-label="Fees Type"
               >
-                <option value="null" selected disabled>Fees Type</option>
-                <option value="BUS">BUS</option>
-                <option value="TUITION">TUITION</option>
-                <option value="BOTH">BOTH</option>
+                <option value="" selected disabled>Fees Type</option>
+                <option value="SCHOOL">School</option>
+                <option value="UNIVERSITY">University</option>
               </select>
               <small
                 class="text-danger"
@@ -109,9 +108,21 @@
                 >Field can't be empty</small
               >
             </div>
-            <button class="btn d-block mt-4" (click)="onSubmit()" *ngIf="!loading" [disabled]="feesForm.touched && !feesForm.valid">Send Message</button>
+            <button
+              class="btn d-block mt-4"
+              (click)="onSubmit()"
+              *ngIf="!loading"
+              [disabled]="feesForm.touched && !feesForm.valid"
+            >
+              Send Message
+            </button>
             <div class="loader" *ngIf="loading">
-              <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+              <div class="lds-ring">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
             </div>
           </form>
         </div>
@@ -139,18 +150,22 @@
           <p class="title">For More Information</p>
           <div class="cards-wrapper">
             <div class="info-card">
-              <div class="info-icon-wrapper">
-                <i class="fa-brands fa-whatsapp"></i>
-              </div>
-              <p class="text">WhatsApp</p>
-              <p class="data">01067662509</p>
+              <a href="https://api.whatsapp.com/send?phone=01067662509" target="_blank">
+                <div class="info-icon-wrapper">
+                  <i class="fa-brands fa-whatsapp"></i>
+                </div>
+                <p class="text">WhatsApp</p>
+                <p class="data">01067662509</p>
+              </a>
             </div>
             <div class="info-card">
-              <div class="info-icon-wrapper">
-                <i class="fa-solid fa-envelope"></i>
-              </div>
-              <p class="text">Message</p>
-              <p class="data">Send us a message</p>
+              <a (click)="onContactUsClicked()">
+                <div class="info-icon-wrapper">
+                  <i class="fa-solid fa-envelope"></i>
+                </div>
+                <p class="text">Message</p>
+                <p class="data">Send us a message</p>
+              </a>
             </div>
           </div>
         </div>

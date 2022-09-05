@@ -72,56 +72,44 @@
             <label class="d-block mb-3 text-capitalize fw-bold text-start"
               >Interested In</label
             >
-            <div class="form-check form-check-inline mb-3">
+            <div
+              class="form-check form-check-inline mb-3"
+              *ngFor="let contact of contactFor"
+            >
               <input
                 class="form-check-input"
                 name="contactFor"
-                type="radio"
-                id="fees"
-                formControlName="contactFor"
-                value="FEES-INSTALLMENT"
+                type="checkbox"
+                [id]="contact?.name"
+                [value]="contact?.value"
+                (change)="onCheckboxChange($event)"
               />
-              <label class="form-check-label" for="fees"
-                >Fees Installments</label
-              >
-            </div>
-            <div class="form-check form-check-inline mb-3">
-              <input
-                class="form-check-input"
-                name="contactFor"
-                type="radio"
-                id="supplies"
-                value="SUPPLIES"
-                formControlName="contactFor"
-              />
-              <label class="form-check-label" for="supplies"
-                >School Supplies</label
-              >
-            </div>
-            <div class="form-check form-check-inline mb-3">
-              <input
-                class="form-check-input"
-                name="contactFor"
-                type="radio"
-                id="payment"
-                value="FEES-PAYMENT"
-                formControlName="contactFor"
-              />
-              <label class="form-check-label" for="payment">Fees Payment</label>
+              <label class="form-check-label" [for]="contact?.name">{{
+                contact?.name
+              }}</label>
             </div>
             <small
-            class="text-danger"
-            *ngIf="
-              contactForm.controls['contactFor'].touched &&
-              !contactForm.controls['contactFor'].valid
-            "
-            >Field can't be empty</small
-          >
-          <button class="btn d-block mt-4" (click)="onSubmit()" *ngIf="!loading" [disabled]="contactForm.touched && !contactForm.valid">Send Message</button>
-          <div class="loader" *ngIf="loading">
-            <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+              class="text-danger d-block"
+              *ngIf="contactForm.controls['contactFor'].touched && contactForm.controls['contactFor'].errors?.['required']"
+              >Field can't be empty</small
+            >
+            <button
+              class="btn d-block mt-4"
+              (click)="onSubmit()"
+              *ngIf="!loading"
+              [disabled]="contactForm.touched && !contactForm.valid"
+            >
+              Send Message
+            </button>
+            <div class="loader" *ngIf="loading">
+              <div class="lds-ring">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+            </div>
           </div>
-        </div>
         </form>
       </div>
     </div>

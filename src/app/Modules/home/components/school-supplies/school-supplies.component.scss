@@ -1,5 +1,8 @@
 .container-fluid {
   background-color: var(--light-red);
+  @media (max-width: 576px) {
+    padding: 2em 1em !important;
+  }
   .head {
     color: var(--black);
   }
@@ -52,15 +55,27 @@
         padding-inline-start: 1em;
         p {
           color: var(--black);
-          line-height: 1.5em;
+          line-height: 1.7em;
           width: 90%;
           margin: 0;
+          span {
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--primary);
+          }
+          @media (max-width: 576px) {
+            width: 100%;
+          }
         }
       }
     }
     .info-part {
       margin-top: 6em;
       text-align: center;
+      @media (max-width: 576px) {
+        margin-top: 2em;
+      }
+
       .title {
         color: var(--black);
         font-weight: 600;
@@ -70,6 +85,9 @@
         display: flex;
         flex-direction: row;
         justify-content: space-around;
+        @media (max-width: 576px) {
+          justify-content: space-between;
+        }
         .info-card {
           width: 40%;
           display: inline-block;
@@ -80,6 +98,29 @@
           padding: 20px 30px;
           text-align: center;
           border-radius: 10px;
+          cursor: pointer;
+          @media (max-width: 576px) {
+            width: 49%;
+            padding: 10px 15px;
+          }
+          &:hover {
+            background-color: var(--primary);
+            color: var(--white);
+            .info-icon-wrapper {
+              background-color: var(--white);
+              i {
+                color: var(--primary);
+              }
+            }
+            .text,
+            .data {
+              color: var(--white);
+            }
+            transition: all 0.3s ease-in-out;
+          }
+          a {
+            text-decoration: none;
+          }
           .info-icon-wrapper {
             width: 40px;
             height: 40px;
@@ -91,6 +132,7 @@
             line-height: 2.2em;
             i {
               font-size: 20px;
+              color: var(--black);
             }
           }
           .text {
@@ -116,6 +158,9 @@
       -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.06);
       -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.06);
       box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.06);
+      @media (max-width: 576px) {
+        padding: 1.5em !important;
+      }
       .title {
         font-size: 1.2em;
         font-weight: 600;
@@ -174,7 +219,6 @@
     width: 15px !important;
     height: 15px !important;
   }
-
 }
 
 .file-preview {

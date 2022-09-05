@@ -1,5 +1,8 @@
 .container-fluid {
   background-color: var(--yellow);
+  @media(max-width: 576px) {
+    padding: 1em !important;
+  }
   .head {
     color: var(--black);
   }
@@ -8,6 +11,9 @@
     -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.06);
     -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.06);
     box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.06);
+    @media(max-width: 576px) {
+      padding: 1.5em !important;
+    }
    }
   .form-group {
     input {
@@ -23,6 +29,9 @@
   .form-check {
     label {
       font-size: 14px;
+    }
+    @media(max-width: 576px) {
+      display: block !important;
     }
   }
   .form-check-input:checked {

@@ -2,6 +2,9 @@ header {
   height: 100%;
   background: linear-gradient(180deg, var(--light-red) 60%, var(--white) 40%);
   position: relative;
+  @media (max-width: 576px) {
+    padding: 2em 1em !important;
+  }
   .circle {
     position: absolute;
     top: 0;
@@ -17,7 +20,7 @@ header {
         width: 50px;
       }
       @media (max-width: 576px) {
-        width: 100px;
+        width: 60px;
         margin: auto;
       }
     }
@@ -47,7 +50,7 @@ header {
           @media (max-width: 576px) {
             margin-right: 0.5em;
             margin-left: 0.5em;
-            font-size: .8em;
+            font-size: 0.8em;
           }
           &:hover {
             color: var(--primary);
@@ -57,6 +60,67 @@ header {
       }
     }
   }
+  .lg-nav {
+    display: none;
+    @media (min-width: 768px) {
+      display: flex;
+    }
+  }
+  .sm-nav {
+    display: none;
+    @media (max-width: 576px) {
+    display: flex;
+    }
+    .head {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      align-items: center;
+      .logo-wrapper {
+        margin-bottom: 0;
+      }
+    }
+    .menu-items {
+      margin-top: 1em;
+      li {
+        a {
+          cursor: pointer;
+          color: var(--black);
+          margin-right: 1em;
+          margin-left: 1em;
+          @media (max-width: 1024px) {
+            margin-right: 0.5em;
+            margin-left: 0.5em;
+          }
+          @media (max-width: 576px) {
+            margin-right: 0.5em;
+            margin-left: 0.5em;
+            font-size: 0.8em;
+          }
+          &:hover {
+            color: var(--primary);
+            transition: all 0.4s ease-in-out;
+          }
+        }
+      }
+    }
+  }
+  .menu-btn-wrapper {
+    .menu-btn {
+      box-shadow: none;
+      @media (max-width: 576px) {
+      }
+      &:hover {
+        i {
+          color: var(--primary);
+        }
+      }
+      i {
+        font-size: 1.2em;
+      }
+    }
+  }
+
   .titles {
     text-align: center;
     position: relative;
@@ -81,6 +145,9 @@ header {
     }
     .you {
       margin-bottom: 10px;
+      @media (max-width: 576px) {
+        width: 30%;
+      }
     }
   }
   .app-screens {
@@ -110,6 +177,9 @@ header {
           width: 200px;
           @media (max-width: 1024px) {
             width: 180px;
+          }
+          @media (max-width: 576px) {
+            width: 130px;
           }
         }
       }

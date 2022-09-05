@@ -1,5 +1,8 @@
 .container-fluid {
   background-color: var(--yellow);
+  @media(max-width: 576px) {
+    padding: 2em 1em !important;
+  }
   .head {
     color: var(--black);
   }
@@ -51,7 +54,7 @@
           min-height: 9em;
         }
         @media(max-width: 576px) {
-          min-height: 6em;
+          min-height: 10em;
         }
       }
       .card-btn {

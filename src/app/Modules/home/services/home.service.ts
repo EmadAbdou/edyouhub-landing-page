@@ -24,4 +24,8 @@ export class HomeService {
     return this.http.post(`${this.endPointUrl}contact-us`, requestData);
   }
 
+  sendContactRequest(requestData: any): Observable<any> {
+    return this.http.post(`${this.endPointUrl}contact-us`, requestData);
+  }
+
 }

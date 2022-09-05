@@ -1,0 +1,75 @@
+<div class="modal-header">
+  <h6 class="modal-title pull-left">Contact Us</h6>
+  <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+    <span aria-hidden="true" class="visually-hidden">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <form [formGroup]="contactForm">
+    <div class="form-group mb-3">
+      <input
+        type="text"
+        class="form-control p-2 mb-1"
+        placeholder="Name"
+        formControlName="name"
+      />
+      <small
+        class="text-danger"
+        *ngIf="
+          contactForm.controls['name'].touched &&
+          !contactForm.controls['name'].valid
+        "
+        >Field can't be empty</small
+      >
+    </div>
+    <div class="form-group mb-3">
+      <input
+        type="tel"
+        class="form-control p-2 mb-1"
+        placeholder="Mobile Number"
+        formControlName="phone"
+      />
+      <small
+        class="text-danger"
+        *ngIf="
+          contactForm.controls['phone'].touched &&
+          !contactForm.controls['phone'].valid
+        "
+        >Field can't be empty</small
+      >
+    </div>
+    <div class="form-group mb-3">
+      <input
+        type="email"
+        class="form-control p-2 mb-1"
+        placeholder="Email"
+        formControlName="email"
+      />
+      <small
+        class="text-danger"
+        *ngIf="
+          contactForm.controls['email'].touched &&
+          !contactForm.controls['email'].valid
+        "
+        >Field can't be empty</small
+      >
+    </div>
+    <div class="form-group mb-3">
+      <textarea class="form-control p-2 mb-1" placeholder="Message" formControlName="message"></textarea>
+      <small
+        class="text-danger"
+        *ngIf="
+          contactForm.controls['message'].touched &&
+          !contactForm.controls['message'].valid
+        "
+        >Field can't be empty</small
+      >
+    </div>
+    <button class="btn d-block mt-4" (click)="onSubmit()" *ngIf="!loading" [disabled]="contactForm.touched && !contactForm.valid">Send Message</button>
+    <div class="loader mt-4" *ngIf="loading">
+      <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+    </div>
+  </form>
+</div>
+<!-- <div class="modal-footer">
+</div> -->

@@ -12,6 +12,7 @@ import { ContactUsComponent } from './components/contact-us/contact-us.component
 import { NgxDropzoneModule } from 'ngx-dropzone';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { InfoModalComponent } from './components/info-modal/info-modal.component';
+import { SharedModule } from 'src/app/Shared/shared.module';
 
 const routes: Routes = [
   {
@@ -37,7 +38,8 @@ const routes: Routes = [
     FormsModule,
     ReactiveFormsModule,
     NgxDropzoneModule,
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    SharedModule
   ],
   providers: [],
   bootstrap: [HomePageComponent],

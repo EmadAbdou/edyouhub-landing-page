@@ -16,7 +16,7 @@
           <div class="text-wrapper">
             <p>
               Send your supplies list now to get it to your doorstep and enjoy
-              7% discount
+              <span class="dicount">7% discount</span>
             </p>
           </div>
         </div>
@@ -24,18 +24,22 @@
           <p class="title">For More Information</p>
           <div class="cards-wrapper">
             <div class="info-card">
-              <div class="info-icon-wrapper">
-                <i class="fa-brands fa-whatsapp"></i>
-              </div>
-              <p class="text">WhatsApp</p>
-              <p class="data">01067662509</p>
+              <a href="https://api.whatsapp.com/send?phone=01067662509" target="_blank">
+                <div class="info-icon-wrapper">
+                  <i class="fa-brands fa-whatsapp"></i>
+                </div>
+                <p class="text">WhatsApp</p>
+                <p class="data">01067662509</p>
+              </a>
             </div>
             <div class="info-card">
-              <div class="info-icon-wrapper">
-                <i class="fa-solid fa-envelope"></i>
-              </div>
-              <p class="text">Message</p>
-              <p class="data">Send us a message</p>
+              <a (click)="onContactUsClicked()">
+                <div class="info-icon-wrapper">
+                  <i class="fa-solid fa-envelope"></i>
+                </div>
+                <p class="text">Message</p>
+                <p class="data">Send us a message</p>
+              </a>
             </div>
           </div>
         </div>
