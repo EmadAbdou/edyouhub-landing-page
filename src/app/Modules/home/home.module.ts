@@ -13,6 +13,7 @@ import { NgxDropzoneModule } from 'ngx-dropzone';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { InfoModalComponent } from './components/info-modal/info-modal.component';
 import { SharedModule } from 'src/app/Shared/shared.module';
+import { SmartRoadExhibitionComponent } from './components/smart-road-exhibition/smart-road-exhibition.component';
 
 const routes: Routes = [
   {
@@ -30,6 +31,7 @@ const routes: Routes = [
     BusinessCooperationComponent,
     ContactUsComponent,
     InfoModalComponent,
+    SmartRoadExhibitionComponent,
   ],
   imports: [
     CommonModule,

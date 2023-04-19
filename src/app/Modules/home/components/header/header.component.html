@@ -1,9 +1,9 @@
 <header class="container-fluid p-5" id="header">
   <img src="assets/imgs/circle.png" alt="" class="circle" />
   <div class="container">
-    <nav class="navbar lg-nav row mb-5" >
+    <nav class="navbar lg-nav row mb-5">
       <div class="col-lg-2 col-md-1 col-sm-6 logo-wrapper">
-        <a class="navbar-brand"  routerLink="/">
+        <a class="navbar-brand" routerLink="/">
           <img
             src="assets/imgs/logo.png"
             alt=""
@@ -13,8 +13,13 @@
       </div>
       <div class="col-lg-8 col-md-11 col-sm-0 links-wrapper">
         <ul class="navbar-nav">
-          <li class="nav-item"  routerLink="/">
+          <li class="nav-item" routerLink="/">
             <a class="nav-link">Discover</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#smart_road_exhibition"
+              >Smart Road Exhibition</a
+            >
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#fees">Fees Installment</a>
@@ -22,18 +27,17 @@
           <li class="nav-item">
             <a class="nav-link" href="#supplies">School Supplies</a>
           </li>
-          <li class="nav-item" >
-            <a class="nav-link"  href="#business">Business Cooperation</a>
+          <li class="nav-item">
+            <a class="nav-link" href="#business">Business Cooperation</a>
           </li>
         </ul>
       </div>
-      <div class="col-lg-2 col-md-0 col-sm-6 menu-btn-wrapper">
-      </div>
+      <div class="col-lg-2 col-md-0 col-sm-6 menu-btn-wrapper"></div>
     </nav>
-    <nav class="navbar sm-nav mb-5" >
+    <nav class="navbar sm-nav mb-5">
       <div class="head">
         <div class="logo-wrapper">
-          <a class="navbar-brand"  routerLink="/">
+          <a class="navbar-brand" routerLink="/">
             <img
               src="assets/imgs/logo.png"
               alt=""
@@ -42,13 +46,18 @@
           </a>
         </div>
         <div class="menu-btn-wrapper">
-          <button class="btn menu-btn" (click)="showMenuItems = !showMenuItems"><i class="fas fa-bars"></i></button>
+          <button class="btn menu-btn" (click)="showMenuItems = !showMenuItems">
+            <i class="fas fa-bars"></i>
+          </button>
         </div>
       </div>
       <div class="menu-items" *ngIf="showMenuItems">
         <ul class="navbar-nav">
-          <li class="nav-item" routerLink="/" >
+          <li class="nav-item" routerLink="/">
             <a class="nav-link">Discover</a>
+          </li>
+          <li class="nav-item" (click)="openNavLink('smart_road_exhibition')">
+            <a class="nav-link">Smart Road Exhibition</a>
           </li>
           <li class="nav-item" (click)="openNavLink('fees')">
             <a class="nav-link">Fees Installment</a>
@@ -56,7 +65,7 @@
           <li class="nav-item" (click)="openNavLink('supplies')">
             <a class="nav-link">School Supplies</a>
           </li>
-          <li class="nav-item" (click)="openNavLink('business')" >
+          <li class="nav-item" (click)="openNavLink('business')">
             <a class="nav-link">Business Cooperation</a>
           </li>
         </ul>
@@ -64,7 +73,7 @@
     </nav>
     <div class="row titles mb-5">
       <img class="lines" src="assets/imgs/lines.png" alt="" />
-      <div class="col-lg-8 col-md-10 col-sm-12 m-auto">
+      <!-- <div class="col-lg-8 col-md-10 col-sm-12 m-auto">
         <p>
           <span class="title">We bring</span>
           <span>
@@ -73,11 +82,37 @@
           <span class="title">inside the </span>
           <span class="title d-block">best education hub</span>
         </p>
+      </div> -->
+      <div class="col-lg-8 col-md-10 col-sm-12 m-auto update-wrapper">
+        <div class="first-line">
+          <div class="first">
+            <img src="assets/imgs/first-img.svg" alt="" />
+            <span>The 1 <sup>st</sup></span>
+          </div>
+          <span class="update-title">Social Platform For Education</span>
+        </div>
+        <div class="second-line">
+          <span class="update-title"> Wait EDYOUHUB in its new update... </span>
+          <div class="may">
+            <span>May</span>
+            <img src="assets/imgs/under-line.png" alt="" />
+          </div>
+        </div>
+        <span class="update-title">Stay Tuned!</span>
+        <!-- <p>
+          <span class="title">We bring</span>
+          <span>
+            <img class="you" src="assets/imgs/text.png" alt="" />
+          </span>
+          <span class="title">inside the </span>
+          <span class="title d-block">best education hub</span>
+        </p> -->
       </div>
     </div>
     <div class="app-screens row mt-5 mb-5">
       <div class="col-lg-8 col-md-10 col-sm-12 m-auto">
-        <img src="assets/imgs/app-screens.png" alt="" />
+        <!-- <img src="assets/imgs/app-screens.png" alt="" /> -->
+        <img src="assets/imgs/app-screens-2.png" alt="" />
       </div>
     </div>
     <div class="row app-info-wrapper mb-5">
