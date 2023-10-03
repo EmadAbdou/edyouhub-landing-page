@@ -1,16 +1,31 @@
-@import '~ngx-toastr/toastr';
+@import "~ngx-toastr/toastr";
 
 /* You can add global styles to this file, and also import other style files */
 :root {
-  --primary: #FD3652;
-  --white: #FFFFFF;
+  --primary: #fd3652;
+  --white: #ffffff;
   --black: #000000;
   --gray: #919191;
-  --yellow: #FFFDF0;
-  --light-red: #FFF2F4;
-  --en-font: 'Montserrat', sans-serif;
+  --yellow: #fffdf0;
+  --light-red: #fff2f4;
+  --en-font: "Montserrat", sans-serif;
 }
 
 body {
   font-family: var(--en-font);
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
 }

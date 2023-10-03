@@ -1,0 +1,46 @@
+.container {
+    .row {
+        justify-content: center;
+        text-align: center;
+        .title {
+            font-size: 2em;
+            font-weight: 500;
+            color: var(--black);
+        }
+    }
+    .courses-items {
+        .item-wrapper {
+            padding: 1em;
+            &:nth-child(2) {
+               .item {
+                background-color: var(--yellow);
+               }
+            }
+            .item {
+                background-color: var(--light-red);
+                padding: 1.5em;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                border-radius: 3px;
+                .item-info {
+                    text-align: start;
+                    .item-title {
+                        font-weight: bold;
+                        color: var(--black);
+                    }
+                    .item-desc {
+                        margin-top: 1em;
+                    }
+                }
+                .item-img-wrapper {
+                    img {
+                        width: 10em;
+                        height: 10em;
+                        object-fit: contain;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,99 @@
+<section class="container-fluid pb-4">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 info-section pt-5 pb-5">
+            <div class="row">
+                <div class="col-lg-10 m-auto">
+                    <div class="row">
+                        <h1 class="title">Contact Us</h1>
+                        <p class="desc">Send Us Message Here</p>
+                    </div>
+                    <div class="row contact-info mt-5 mb-5">
+                        <div class="info-item mb-4">
+                            <img src="assets/imgs/whats-icon.svg" alt="" class="icon">
+                            <span class="data">XXXXX XXXX XXXX</span>
+                        </div>
+                        <div class="info-item">
+                            <img src="assets/imgs/mail-icon.svg" alt="" class="icon">
+                            <span class="data">info@edyouhub.com</span>
+                        </div>
+                    </div>
+                    <div class="row social-icons mb-3">
+                        <a href="" class="social-item">
+                            <img src="assets/imgs/fb-icon.svg" alt="">
+                        </a>
+                        <a href="" class="social-item">
+                            <img src="assets/imgs/tw-icon.svg" alt="">
+                        </a>
+                        <a href="" class="social-item">
+                            <img src="assets/imgs/inst-icon.svg" alt="">
+                        </a>
+                        <a href="" class="social-item">
+                            <img src="assets/imgs/in-icon.svg" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <img src="assets/imgs/yellow-circle.svg" alt="" class="yellow-img">
+            <img src="assets/imgs/white-circle.svg" alt="" class="white-img">
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 form-section pt-5 pb-5">
+            <div class="row">
+                <div class="col-lg-10 m-auto">
+                    <h3 class="head mb-5">Contact Via</h3>
+                    <form [formGroup]="contactForm">
+                        <div class="form-group mb-3">
+                            <label for="name">Full Name</label>
+                            <input type="text" class="form-control p-2 mb-1" placeholder="Full Name"
+                                formControlName="name" />
+                            <small class="text-danger" *ngIf="
+                      contactForm.controls['name'].touched &&
+                      !contactForm.controls['name'].valid
+                    ">Field can't be empty</small>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="email">Email Address</label>
+                            <input type="email" class="form-control p-2 mb-1" placeholder="Email Address"
+                                formControlName="email" name="email" />
+                            <small class="text-danger" *ngIf="
+                      contactForm.controls['email'].touched &&
+                      !contactForm.controls['email'].valid
+                    ">Field can't be empty</small>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="mobile">Mobile Number</label>
+
+                            <input type="tel" class="form-control p-2 mb-1" placeholder="Mobile Number"
+                                formControlName="phone" name="mobile" />
+                            <small class="text-danger" *ngIf="
+                      contactForm.controls['phone'].touched &&
+                      !contactForm.controls['phone'].valid
+                    ">Field can't be empty</small>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="msg">Your Message</label>
+                            <textarea name="msg" class="form-control" placeholder="Your Message"
+                                formControlName="message"></textarea>
+                            <small class="text-danger" *ngIf="
+                      contactForm.controls['message'].touched &&
+                      !contactForm.controls['message'].valid
+                    ">Field can't be empty</small>
+                        </div>
+
+                    </form>
+                    <button class="btn d-block mt-4" (click)="onSubmit()" *ngIf="!loading"
+                        [disabled]="contactForm.touched && !contactForm.valid">
+                        Send Message
+                    </button>
+                    <div class="loader" *ngIf="loading">
+                        <div class="lds-ring">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
