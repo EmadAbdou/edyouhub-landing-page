@@ -1,0 +1,10 @@
+<svg id="Group_6105" data-name="Group 6105" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+  <circle id="Ellipse_1063" data-name="Ellipse 1063" cx="20" cy="20" r="20" fill="#fff"/>
+  <g id="vuesax_linear_sms" data-name="vuesax/linear/sms" transform="translate(8.2 8)">
+    <g id="sms" transform="translate(0)">
+      <path id="Vector" d="M4.967,16.917H14.9c2.98,0,4.967-1.493,4.967-4.976V4.976C19.867,1.493,17.88,0,14.9,0H4.967C1.987,0,0,1.493,0,4.976v6.966C0,15.424,1.987,16.917,4.967,16.917Z" transform="translate(1.967 3.442)" fill="#db4437"/>
+      <path id="Vector-2" data-name="Vector" d="M0,0,3.078,2.458a3.113,3.113,0,0,0,3.687,0L9.833,0" transform="translate(6.983 8.936)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <path id="Vector-3" data-name="Vector" d="M23.8,0H0V23.8H23.8Z" fill="#fff" opacity="0"/>
+    </g>
+  </g>
+</svg>

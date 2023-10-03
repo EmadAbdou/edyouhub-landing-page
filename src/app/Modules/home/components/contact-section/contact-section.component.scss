@@ -1,0 +1,97 @@
+.container-fluid {
+    .info-section {
+        background-color: var(--primary);
+        color: var(--white);
+        position: relative;
+        overflow: hidden;
+        .title {
+            font-size: 2em;
+            font-weight: 500;
+        }
+        .contact-info {
+            .info-item {
+                img {
+                    opacity: 0.6;
+                }
+                .data {
+                    margin-inline-start: 1em;
+                    // display: inline-block;
+                }
+            }
+        }
+        .social-icons {
+            margin-top: 15em;
+            a {
+                display: inline-block;
+                width: 48px;
+                height: 48px;
+                border-radius: 50%;
+                text-decoration: none;
+                margin-inline-end: 0.5em;
+                line-height: 2.5em;
+                text-align: center;
+                background-color: rgba(255, 255, 255, 0.4);
+                &:hover {
+                    img {
+                        transform: scale(1.2);
+                        transition: all 0.3s ease-in-out;
+                    }
+                }
+            }
+        }
+        .yellow-img {
+            position: absolute;
+            bottom: -3em;
+            inset-inline-end: -3em;
+        }
+        .white-img {
+            position: absolute;
+            bottom: 7em;
+            inset-inline-end: 7em;
+            @media(max-width: 768px) {
+                display: none;
+            }
+
+        }
+    }
+    .form-section {
+        .head {
+            color: var(--black);
+            font-weight: 500;
+        }
+        form {
+            width: 80%;
+            @media(max-width: 768px) {
+                width: 100%;
+            }
+            .form-group {
+                margin-bottom: 1.5em;
+                label {
+                    color: var(--black);
+                    font-weight: 500;
+                    margin-bottom: 1em;
+                }
+                .form-control {
+                    border: none;
+                    border-radius: 0;
+                    box-shadow: none;
+                    border-bottom: 1px solid var(--black);
+                    &:focus {
+                        border-bottom: 1px solid var(--primary);
+                    }
+                }
+                textarea {
+                    height: 10em;
+                    resize: none;
+                    margin-bottom: 2em;
+                }
+            }
+        }
+        .btn {
+            background-color: var(--primary);
+            margin: auto;
+            color: var(--white);
+            width: 50%;
+        }
+    }
+}

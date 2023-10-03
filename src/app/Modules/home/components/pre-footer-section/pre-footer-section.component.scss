@@ -1,0 +1,117 @@
+.pre-footer-section {
+    height: 100%;
+    background: var(--light-red);
+    position: relative;
+    @media (max-width: 576px) {
+      padding: 2em 1em !important;
+    }
+    .titles {
+      text-align: center;
+      position: relative;
+  
+      .lines {
+        position: absolute;
+        bottom: 0;
+        inset-inline-start: 13%;
+        width: 80px;
+        height: 40px;
+        @media (max-width: 768px) {
+          inset-inline-start: 0%;
+        }
+      }
+      .title {
+        font-size: 2.2em;
+        font-weight: 600;
+        color: var(--black);
+        @media (max-width: 576px) {
+          font-size: 2em;
+        }
+      }
+      .you {
+        margin-bottom: 10px;
+        @media (max-width: 576px) {
+          width: 30%;
+        }
+      }
+    }
+    .app-screens {
+      img {
+        width: 100%;
+      }
+    }
+    .app-info-wrapper {
+      text-align: center;
+      justify-content: center;
+      .title {
+        color: var(--primary);
+        font-size: 1.5em;
+      }
+      .links {
+        a {
+          cursor: pointer;
+          text-decoration: none;
+          margin-right: 1em;
+          margin-left: 1em;
+          padding: 5px;
+          @media (max-width: 1024px) {
+            margin-right: 0.5em;
+            margin-left: 0.5em;
+          }
+          img {
+            width: 200px;
+            @media (max-width: 1024px) {
+              width: 180px;
+            }
+            @media (max-width: 576px) {
+              width: 130px;
+              margin-bottom: 1em;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  .update-wrapper {
+    .first-line {
+      .first {
+        display: inline-block;
+        position: relative;
+        img {
+          width: 100%;
+        }
+        span {
+          position: absolute;
+          z-index: 1;
+          top: 15%;
+          inset-inline-start: 10%;
+          font-size: 2rem;
+          font-weight: bold;
+        }
+      }
+    }
+    .update-title {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-inline-start: 10px;
+      vertical-align: middle;
+    }
+    .second-line {
+      .may {
+        display: inline-block;
+        vertical-align: top;
+        width: min-content;
+        span {
+          font-size: 2rem;
+          display: block;
+          font-weight: bold;
+          color: var(--primary);
+        }
+        img {
+          width: 100%;
+          margin: auto;
+        }
+      }
+    }
+  }
+  

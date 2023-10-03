@@ -1,0 +1,32 @@
+.container-fluid {
+    background-image: url('/assets/imgs/business-accounts-bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 90vh;
+    .container {
+        .row {
+            text-align: start;
+            .title {
+                font-size: 2em;
+                font-weight: 500;
+                color: var(--white);
+            }
+            .desc {
+                width: 70%;
+                text-align: start;
+                margin-bottom: 0;
+                color: var(--white);
+                display: block;
+            }
+            .btn {
+                background-color: var(--primary);
+                color: var(--white);
+                box-shadow: none;
+                padding: 0.5em 1.5em;
+                outline: none;
+                width: fit-content;
+                display: block;
+            }
+        }
+    }
+}
