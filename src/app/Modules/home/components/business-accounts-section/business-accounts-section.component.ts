@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonService } from 'src/app/Core/services/common.service';
 
 @Component({
   selector: 'app-business-accounts-section',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BusinessAccountsSectionComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private commonService: CommonService
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  openAppPopup(): void {
+    this.commonService.openAppPopup();
   }
 
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { BsModalService } from 'ngx-bootstrap/modal';
+import { StaticTextModalComponent } from 'src/app/Shared/components/static-text-modal/static-text-modal.component';
 
 @Component({
   selector: 'app-footer',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private modalService: BsModalService
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  openTextPopup(text: string): void {
+    this.modalService.show(StaticTextModalComponent, { class: 'modal-lg', initialState: { text } });
   }
 
 }

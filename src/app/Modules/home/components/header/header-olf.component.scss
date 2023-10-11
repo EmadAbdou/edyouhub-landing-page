@@ -19,7 +19,7 @@ header {
       @media (max-width: 768px) {
         width: 50px;
       }
-      @media (max-width: 576px) {
+      @media (max-width: 768px) {
         width: 60px;
         margin: auto;
       }
@@ -28,7 +28,7 @@ header {
   .links-wrapper {
     justify-content: center;
     text-align: center;
-    @media (max-width: 576px) {
+    @media (max-width: 768px) {
       padding-right: 0 !important;
       padding-left: 0 !important;
     }
@@ -47,7 +47,7 @@ header {
             margin-right: 0.5em;
             margin-left: 0.5em;
           }
-          @media (max-width: 576px) {
+          @media (max-width: 768px) {
             margin-right: 0.5em;
             margin-left: 0.5em;
             font-size: 0.8em;
@@ -68,7 +68,7 @@ header {
   }
   .sm-nav {
     display: none;
-    @media (max-width: 576px) {
+    @media (max-width: 768px) {
       display: flex;
     }
     .head {
