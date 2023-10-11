@@ -15,6 +15,11 @@
                 }
                 .data {
                     margin-inline-start: 1em;
+                    text-decoration: none;
+                    color: var(--white);
+                    &:hover {
+                        text-decoration: underline;
+                    }
                     // display: inline-block;
                 }
             }

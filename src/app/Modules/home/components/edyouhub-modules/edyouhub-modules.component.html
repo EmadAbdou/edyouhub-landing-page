@@ -1,4 +1,4 @@
-<section class="container-fluid pt-4 pb-5">
+<section class="container-fluid pt-4 pb-5" id="directory">
     <div class="container">
         <div class="row title-row">
             <h1 class="title">Directory</h1>
@@ -6,18 +6,18 @@
         <div class="row content-row mt-1">
             <div class="col-lg-10 col-md-11 col-sm-12 m-auto item-wrapper mt-3">
                 <div class="text-part">
-                    <h3 class="head">Educational Entities</h3>
+                    <h3 class="head">Education places</h3>
                     <p class="text">
                         <span>
-                            Find all educational entities for all education stages either basic education (Schools &
+                            Find all  education places for all education stages either basic education (Schools &
                             Nurseries), high education (Universities & Institutes), and open education (academies)
                         </span>
                         <span class="d-block">
                             Here you can find all basic info, fees and posts
                         </span>
                     </p>
-                    <button class="btn mt-2">
-                        Explore Entities
+                    <button class="btn mt-2" (click)="openAppPopup()">
+                        Explore Places
                     </button>
                 </div>
                 <div class="img-part">
@@ -33,7 +33,7 @@
                     <p class="text">
                         Be updated with the opened and coming admissions (especially for schools and universities) and apply in it online
                     </p>
-                    <button class="btn mt-2">
+                    <button class="btn mt-2" (click)="openAppPopup()">
                         Explore Admissions
                     </button>
                 </div>
@@ -42,9 +42,9 @@
                 <div class="text-part">
                     <h3 class="head">Vacancy</h3>
                     <p class="text">
-                        Find the available vacancies in all the educational entities and apply your CV
+                        Find the available vacancies in all the  education places and apply your CV
                     </p>
-                    <button class="btn mt-2">
+                    <button class="btn mt-2" (click)="openAppPopup()">
                         Apply Now
                     </button>
                 </div>
