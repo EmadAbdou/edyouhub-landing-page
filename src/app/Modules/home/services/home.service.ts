@@ -28,4 +28,22 @@ export class HomeService {
     return this.http.post(`${this.endPointUrl}contact-us`, requestData);
   }
 
+  sendFeesRequest(requestData: any): Observable<any> {
+    return this.http.post(`${this.endPointUrl}feesRequests`, requestData);
+  }
+
+  fetchAllCountries(): Observable<any> {
+    return this.http.get(
+      `${environment.endPointUrl}countries/withoutPagenation/get`
+    );
+  }
+
+  fetchAllCities(countryId: number): Observable<any> {
+    return this.http.get(`${environment.endPointUrl}cities/${countryId}/countries/withoutPagenation/get`);
+  }
+
+  fetchAllAreas(cityId: number): Observable<any> {
+    return this.http.get(`${environment.endPointUrl}cities/${cityId}/areas/withoutPagenation/get`);
+  }
+
 }

@@ -11,8 +11,11 @@ import { HomeService } from 'src/app/Modules/home/services/home.service';
   styleUrls: ['./fees-form-modal.component.scss']
 })
 export class FeesFormModalComponent implements OnInit, OnDestroy {
+
   feesForm: FormGroup;
   loading = false;
+  citiesData: any[] = [];
+  areasData: any[] = [];
   subscriptions = new Subscription();
 
   constructor(
@@ -24,6 +27,7 @@ export class FeesFormModalComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.initFeesForm();
+    this.fetchAllCountries();
   }
 
   initFeesForm(): void {
@@ -36,21 +40,55 @@ export class FeesFormModalComponent implements OnInit, OnDestroy {
     });
   }
 
+  fetchAllCountries(): void {
+    this.subscriptions.add(
+      this.homeService.fetchAllCountries().subscribe((response: any) => {
+        if(response?.success) {
+          this.fetchAllCities(response?.data[0]?.id);
+        }
+      },
+      error => {
+        console.log(error);
+        
+      })
+    );
+  }
+  
+  fetchAllCities(id: number): void {
+    this.subscriptions.add(
+      this.homeService.fetchAllCities(id).subscribe((response: any) => {
+        if(response?.success) {
+          this.citiesData = response?.data;
+        }
+      },
+      error => {
+        console.log(error);
+      })
+    );
+  }
+
+  onCityChange(event: any): void {
+    this.subscriptions.add(
+      this.homeService.fetchAllAreas(event.target.value).subscribe((response: any) => {
+        if(response?.success) {
+          this.areasData = response?.data;
+        }
+      }, error => {
+        console.log(error);
+      })
+    )
+  }
+
   onSubmit(): void {
-    const DATA = new FormData();
-    DATA.set('name', this.feesForm.get('name')?.value);
-    DATA.set('email', this.feesForm.get('email')?.value);
-    DATA.set('phone', this.feesForm.get('phone')?.value);
-    DATA.set('message', this.feesForm.get('message')?.value);
     if (this.feesForm.valid) {
       this.loading = true;
       this.subscriptions.add(
         this.homeService
-          .sendContactRequest(DATA)
+          .sendFeesRequest(this.feesForm?.value)
           .subscribe((response: any) => {
             if(response.success) {
               this.feesForm.reset();
-              this.commonService.handleSuccessMessage('Message Sent Successfully');
+              this.commonService.handleSuccessMessage('Message Sent Successfully, We will contact you soon');
               this.bsModalRef.hide();
             }
             this.loading = false;
