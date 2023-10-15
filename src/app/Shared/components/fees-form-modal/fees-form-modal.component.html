@@ -20,26 +20,23 @@
             !feesForm.controls['phone'].valid
           ">Field can't be empty</small>
         </div>
-        <div class="form-group mb-3">
+        <div class="form-group mb-3" *ngIf="citiesData?.length">
             <select class="form-select  p-2 mb-1" aria-label="Default select example" placeholder="City"
+                (change)="onCityChange($event)"
                 formControlName="city">
                 <option value="" selected class="selected" disabled>City</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+                <option [value]="city?.id" *ngFor="let city of citiesData">{{ city?.name_en}}</option>
             </select>
             <small class="text-danger" *ngIf="
             feesForm.controls['city'].touched &&
             !feesForm.controls['city'].valid
           ">Field can't be empty</small>
         </div>
-        <div class="form-group mb-3">
+        <div class="form-group mb-3" *ngIf="areasData?.length">
             <select class="form-select  p-2 mb-1" aria-label="Default select example" placeholder="area"
                 formControlName="area">
                 <option value="" selected class="selected" disabled>Area</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+                <option [value]="area?.id" *ngFor="let area of areasData">{{ area?.name_en}}</option>
             </select>
             <small class="text-danger" *ngIf="
             feesForm.controls['area'].touched &&
